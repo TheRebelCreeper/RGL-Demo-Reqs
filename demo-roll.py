@@ -1,5 +1,4 @@
 # RGL Demo Parser
-import numpy as np
 import pandas as pd
 import requests
 from lxml import html
