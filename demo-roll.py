@@ -22,6 +22,8 @@ def extract_players_from_log(link):
 
 	players = blu_df.append(red_df)
 	players['Log'] = link
+	players['Requested'] = 'No'
+	players['Collected'] = 'No'
 	return players
 
 def get_random_player(players, team, prev):
@@ -73,7 +75,7 @@ def main():
 		rolled_players = rolled_players.append(random_blue)
 		rolled_players = rolled_players.append(random_red)
 
-	rolled_players.set_index('Team').sort_index().to_csv(output_file, columns=['Name', 'RGL Profile', 'Log'])
+	rolled_players.set_index('Team').sort_index().to_csv(output_file, columns=['Name', 'RGL Profile', 'Log', 'Requested', 'Collected'])
 
 if __name__ == '__main__':
 	main()
